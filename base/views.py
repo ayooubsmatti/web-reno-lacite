@@ -23,11 +23,15 @@ def service(request,pk):
     return render(request, 'base/service.html',context)
 
 def about(request):
-    context = {}
+    services = Service.objects.all()
+    context = {'services':services ,
+                'service' : service}
     return render(request,'base/about.html',context )
 
 def contact(request):
-    context = {}
+    services = Service.objects.all()
+    context = {'services':services ,
+                'service' : service}
     return render(request,'base/contact.html',context )
 
 
